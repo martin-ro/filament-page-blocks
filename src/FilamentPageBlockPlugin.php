@@ -6,7 +6,7 @@ use Closure;
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 use Filament\Support\Concerns\EvaluatesClosures;
-use MartinRo\FilamentPageBlocks\Forms\Components\PageBuilder;
+use MartinRo\FilamentPageBlocks\Forms\Components\PageBlockBuilder;
 
 class FilamentPageBlockPlugin implements Plugin
 {
@@ -28,7 +28,7 @@ class FilamentPageBlockPlugin implements Plugin
 
     public function boot(Panel $panel): void
     {
-        PageBuilder::configureUsing(function (PageBuilder $builder) {
+        PageBlockBuilder::configureUsing(function (PageBlockBuilder $builder) {
             $builder->collapsible($this->shouldBeCollapsible())
                 ->collapsed($this->shouldBeCollapsed());
         });

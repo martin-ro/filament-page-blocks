@@ -12,7 +12,7 @@ class MakePageBlockCommand extends Command
     use CanManipulateFiles;
     use CanValidateInput;
 
-    protected $signature = 'make:page-block {name?} {--F|force}';
+    protected $signature = 'make:filament-page-block {name?} {--F|force}';
 
     protected $description = 'Create a new filament page block';
 

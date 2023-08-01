@@ -6,7 +6,7 @@ use Filament\Forms\Components\Builder;
 use Illuminate\Support\HtmlString;
 use MartinRo\FilamentPageBlocks\Facades\FilamentPageBlocks;
 
-class PageBuilder extends Builder
+class PageBlockBuilder extends Builder
 {
     protected function setUp(): void
     {
@@ -14,7 +14,7 @@ class PageBuilder extends Builder
 
         $this->blocks(FilamentPageBlocks::getPageBlocks());
 
-        $this->label(fn () => new HtmlString('<h1 class="fi-header-heading text-xl font-bold tracking-tight text-gray-950 dark:text-white sm:text-2xl">Content Blocks</h1>'));
+        $this->label(fn () => new HtmlString('<h1 class="fi-header-heading text-xl font-bold tracking-tight text-gray-950 dark:text-white sm:text-2xl">Page Blocks</h1>'));
 
         $this->addActionLabel('Add Block');
 
