@@ -1,4 +1,6 @@
-@aware(['page'])
+<?php
+
+?>
 
 <div>
     //
