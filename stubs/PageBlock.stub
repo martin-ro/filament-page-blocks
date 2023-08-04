@@ -4,6 +4,7 @@ namespace {{ namespace }};
 
 use Filament\Forms\Components\Builder\Block;
 use MartinRo\FilamentPageBlocks\PageBlock;
+use Filament\Forms;
 
 class {{ class }} extends PageBlock
 {
