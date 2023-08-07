@@ -2,15 +2,16 @@
 
 namespace MartinRo\FilamentPageBlocks\Commands;
 
+use Filament\Support\Commands\Concerns\CanIndentStrings;
 use Filament\Support\Commands\Concerns\CanManipulateFiles;
-use Filament\Support\Commands\Concerns\CanValidateInput;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+use function Laravel\Prompts\text;
 
 class MakePageBlockCommand extends Command
 {
+    use CanIndentStrings;
     use CanManipulateFiles;
-    use CanValidateInput;
 
     protected $signature = 'make:filament-page-block {name?} {--F|force}';
 
@@ -18,7 +19,13 @@ class MakePageBlockCommand extends Command
 
     public function handle(): int
     {
-        $pageBlock = (string) Str::of($this->argument('name') ?? $this->askRequired('Name (e.g. `HeroBlock`)', 'name'))
+        //         $pageBlock = (string) Str::of($this->argument('name') ?? $this->askRequired('Name (e.g. `HeroBlock`)', 'name'))
+        //            ->trim('/')
+        //            ->trim('\\')
+        //            ->trim(' ')
+        //            ->replace('/', '\\');
+
+        $pageBlock = (string) Str::of($this->argument('name') ?? text(label: 'Name (e.g. `HeroBlock`)', required: true))
             ->trim('/')
             ->trim('\\')
             ->trim(' ')
