@@ -6,6 +6,7 @@ use Filament\Support\Commands\Concerns\CanIndentStrings;
 use Filament\Support\Commands\Concerns\CanManipulateFiles;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
+
 use function Laravel\Prompts\text;
 
 class MakePageBlockCommand extends Command
@@ -19,12 +20,6 @@ class MakePageBlockCommand extends Command
 
     public function handle(): int
     {
-        //         $pageBlock = (string) Str::of($this->argument('name') ?? $this->askRequired('Name (e.g. `HeroBlock`)', 'name'))
-        //            ->trim('/')
-        //            ->trim('\\')
-        //            ->trim(' ')
-        //            ->replace('/', '\\');
-
         $pageBlock = (string) Str::of($this->argument('name') ?? text(label: 'Name (e.g. `HeroBlock`)', required: true))
             ->trim('/')
             ->trim('\\')
@@ -34,8 +29,7 @@ class MakePageBlockCommand extends Command
         $pageBlockClass = (string) Str::of($pageBlock)->afterLast('\\');
 
         $pageBlockNamespace = Str::of($pageBlock)->contains('\\') ?
-            (string) Str::of($pageBlock)->beforeLast('\\') :
-            '';
+            (string) Str::of($pageBlock)->beforeLast('\\') : '';
 
         $label = Str::of($pageBlock)
             ->beforeLast('Block')
@@ -78,7 +72,7 @@ class MakePageBlockCommand extends Command
 
         $this->copyStubToApp('PageBlock', $path, [
             'class' => $pageBlockClass,
-            'namespace' => 'App\\Filament\\PageBlocks'.($pageBlockNamespace !== '' ? "\\{$pageBlockNamespace}" : ''),
+            'namespace' => 'App\\Filament\\PageBlocks' . ($pageBlockNamespace !== '' ? "\\{$pageBlockNamespace}" : ''),
             'label' => $label,
             'shortName' => $shortName,
         ]);

@@ -3,7 +3,6 @@
 namespace MartinRo\FilamentPageBlocks\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use MartinRo\FilamentPageBlocks\Models\Contracts\Page as PageContract;
 
 /**
  * @method static void register(string $class, string $baseClass)
@@ -33,7 +32,7 @@ use MartinRo\FilamentPageBlocks\Models\Contracts\Page as PageContract;
  */
 class FilamentPageBlocks extends Facade
 {
-    protected static function getFacadeAccessor()
+    protected static function getFacadeAccessor(): string
     {
         return 'filament-page-blocks';
     }
