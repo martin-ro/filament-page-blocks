@@ -18,7 +18,7 @@
     "require": {
         "php": "^8.2",
         "filament/filament": "^3.0-stable",
-        "illuminate/contracts": "^10.0",
+        "illuminate/contracts": "^10.0 | ^11.0",
         "spatie/laravel-package-tools": "^1.13.5"
     },
     "require-dev": {
@@ -28,8 +28,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MartinRo\\FilamentPageBlocks\\": "src/",
-            "MartinRo\\FilamentPageBlocks\\Database\\Factories\\": "database/factories"
+            "MartinRo\\FilamentPageBlocks\\": "src/"
         }
     },
     "autoload-dev": {
