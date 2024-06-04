@@ -37,7 +37,7 @@ class FilamentPageBlocksManager
     public function registerPageBlock(string $pageBlock): void
     {
         if (! is_subclass_of($pageBlock, PageBlock::class)) {
-            throw new InvalidArgumentException("{$pageBlock} must extend " . PageBlock::class);
+            throw new InvalidArgumentException("{$pageBlock} must extend ".PageBlock::class);
         }
 
         $this->pageBlocks->put($pageBlock::getName(), $pageBlock);

@@ -72,7 +72,7 @@ class MakePageBlockCommand extends Command
 
         $this->copyStubToApp('PageBlock', $path, [
             'class' => $pageBlockClass,
-            'namespace' => 'App\\Filament\\PageBlocks' . ($pageBlockNamespace !== '' ? "\\{$pageBlockNamespace}" : ''),
+            'namespace' => 'App\\Filament\\PageBlocks'.($pageBlockNamespace !== '' ? "\\{$pageBlockNamespace}" : ''),
             'label' => $label,
             'shortName' => $shortName,
         ]);
