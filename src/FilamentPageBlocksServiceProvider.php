@@ -61,7 +61,7 @@ class FilamentPageBlocksServiceProvider extends PackageServiceProvider
             collect($filesystem->allFiles($directory))
                 ->map(function (SplFileInfo $file) use ($namespace): string {
                     $variableNamespace = $namespace->contains('*') ? str_ireplace(
-                        ['\\'.$namespace->before('*'), $namespace->after('*')],
+                        ['\\' . $namespace->before('*'), $namespace->after('*')],
                         ['', ''],
                         Str::of($file->getPath())
                             ->after(base_path())
