@@ -47,9 +47,14 @@ class MyBlock extends PageBlock
 
 and its corresponding blade component view:
 ```html
+@props([
+    //
+])
+
 <div>
     //
 </div>
+
 ```
 
 ## Using Page Blocks in your template
