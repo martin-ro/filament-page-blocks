@@ -5,6 +5,7 @@ namespace MartinRo\FilamentPageBlocks;
 use Exception;
 use Illuminate\Support\Collection;
 use InvalidArgumentException;
+use MartinRo\FilamentPageBlocks\Exceptions\InvalidClassTypeException;
 
 class FilamentPageBlocksManager
 {
@@ -29,7 +30,7 @@ class FilamentPageBlocksManager
     {
         match ($baseClass) {
             PageBlock::class => static::registerPageBlock($class),
-            default => throw new Exception('Invalid class type'),
+            default => throw new InvalidClassTypeException('Invalid class type'),
         };
     }
 
@@ -37,7 +38,7 @@ class FilamentPageBlocksManager
     public function registerPageBlock(string $pageBlock): void
     {
         if (! is_subclass_of($pageBlock, PageBlock::class)) {
-            throw new InvalidArgumentException("{$pageBlock} must extend ".PageBlock::class);
+            throw new InvalidArgumentException("{$pageBlock} must extend " . PageBlock::class);
         }
 
         $this->pageBlocks->put($pageBlock::getName(), $pageBlock);

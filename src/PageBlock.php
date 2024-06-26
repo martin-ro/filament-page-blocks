@@ -16,7 +16,7 @@ abstract class PageBlock
             return static::$component;
         }
 
-        return 'page-blocks.'.static::getName();
+        return 'page-blocks.' . static::getName();
     }
 
     public static function getName(): string
