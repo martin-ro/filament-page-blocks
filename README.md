@@ -70,6 +70,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ## Credits
 
 - [Ziyaan Hassan](https://github.com/Z3d0X)
+- [abr4xas](https://github.com/abr4xas)
 - [Martin Ro](https://github.com/martin-ro)
 - [All Contributors](../../contributors)
 
