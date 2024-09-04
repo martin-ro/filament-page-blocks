@@ -1,4 +1,9 @@
-# Block-Based Page Builder for Filament
+# Archived
+Filament has introduced previews and editing in modals in the `Builder` component: https://github.com/filamentphp/filament/pull/12629
+
+To take advantage of the new features, you can use the simplified [Filament Blocks](https://github.com/martin-ro/filament-blocks) package.
+
+## Block-Based Page Builder for Filament
 
 This is basically a lightweight version of [Z3d0X's](https://github.com/z3d0x) excellent [Filament Fabricator](https://filamentphp.com/plugins/fabricator) Plugin. 
 
